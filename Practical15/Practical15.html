@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        .main{
+            text-align: center;
+            color: red;
+            font-size: x-large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #neg,#pos{
+            font-size: 50px;
+            margin: 30px;
+            padding: 20px;
+            background-color: yellow;
+            color: white;
+            
+
+        }
+        body{
+            background-color:lightgreen;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="main">
+    <h2>COUNTER</h2>
+    <button id="neg">-</button>
+    <p style="display: inline-block; font-size: 1cm" id="counter">0</p>
+    <button id="pos">+</button>
+</div>
+<script language="Javascript" type="text/Javascript">
+    var counter = 0;
+    var button1 = document.getElementById('neg');
+    var button2 = document.getElementById('pos');
+    button1.disabled = true;
+    button1.onclick = function () {
+        counter = counter - 1;
+        document.getElementById('counter').innerHTML = counter;
+        if (counter===0 || counter<0) {
+            button1.disabled = true;
+        }
+        else{
+            button1.disabled=false;
+        }
+    };
+    button2.onclick = function () {
+        counter += 1;
+        document.getElementById('counter').innerHTML = counter;
+        if (counter===0 ||counter<0) {
+            button1.disabled = true;
+        }
+        else{
+            button1.disabled=false;
+        }
+    };
+</script>
+    
+</body>
+</html>
